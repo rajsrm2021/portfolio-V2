@@ -5,48 +5,29 @@ function Particle() {
   return (
     <Particles
       id="tsparticles"
-      params={{
+      options={{
         particles: {
           number: {
-            value: 160,
+            value: 80, // Adjust density here
             density: {
               enable: true,
-              value_area: 1500,
+              value_area: 800, // Adjust density area here
             },
-          },
-          line_linked: {
-            enable: false,
-            opacity: 0.03,
-          },
-          move: {
-            direction: "right",
-            speed: 0.05,
           },
           size: {
-            value: 1,
-          },
-          opacity: {
-            anim: {
-              enable: true,
-              speed: 1,
-              opacity_min: 0.05,
-            },
+            value: 1, // Adjust particle size here
           },
         },
         interactivity: {
+          detectsOn: "window",
           events: {
-            onclick: {
+            onhover: {
               enable: true,
-              mode: "push",
-            },
-          },
-          modes: {
-            push: {
-              particles_nb: 1,
+              mode: "repulse",
             },
           },
         },
-        retina_detect: true,
+        detectRetina: true,
       }}
     />
   );
